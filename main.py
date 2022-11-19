@@ -3,12 +3,13 @@ from datetime import date
 from entities.book import Book
 from entities.customer import Customer
 from entities.order import Order
+from repositories.book_archive import BookArchive
+from repositories.book_repository import BookRepository
 from repositories.customer_repository import CustomerRepository
 from repositories.order_repository import OrderRepository
 
-file_book = list(open("books.csv", "r", encoding="utf-8"))
-
-list_books: list[Book] = []
+book_repository = BookRepository()
+book_archive = BookArchive(book_repository)
 
 
 def format_str_price_to_float(price: str) -> float:
