@@ -21,6 +21,7 @@ while True:
         customer = Customer(id, nome)
         user_interface.customer_repository.list_customers.append(customer)
         print("Client cadastrado com sucesso!")
+
     if menu_option == 2:
         id = int(input("Informe o código do pedido: "))
         customer_id = int(input("Informe o código do cliente: "))
@@ -40,15 +41,12 @@ while True:
         order = Order(id, customer, today)
         order.purchased_book = book
 
-        user_interface.order_repository.list_orders.append(order)
+        user_interface.set_order(order)
         print("Pedido cadastrado com sucesso!")
+
     if menu_option == 3:
-        print("\n***** Relatório de pedidos *****\n")
-        for order in user_interface.order_repository.list_orders:
-            print(f"Código do Pedido: {order.id}")
-            print(f"Cliente: {order.customer.name}")
-            print(f"Data do pedido: {order.date_order}")
-            print(f"Livro escolhido: {order.purchased_book.name} \n")
+        print(user_interface.order_repository)
+
     if menu_option == 4:
         formatText = "{0:<10} {1:<20}\n"
         menu = ("\n***** Relatório de clientes *****\n")

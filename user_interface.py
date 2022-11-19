@@ -2,6 +2,7 @@ from repositories.customer_repository import CustomerRepository
 from repositories.order_repository import OrderRepository
 from repositories.book_repository import BookRepository
 from repositories.book_archive import BookArchive
+from entities.order import Order
 
 
 class UserInterface:
@@ -15,7 +16,10 @@ class UserInterface:
         return self.customer_repository.verif_if_customer_exists(customer_id)
     
     def get_customer(self, customer_id: int):
-        return self.customer_repository.get_customer(customer_id)   
+        return self.customer_repository.get_customer(customer_id)
+
+    def set_order(self, order: Order) -> None:
+        self.order_repository.set_order(order)   
 
     def verif_if_book_exists(self, book_id: int) -> bool:
         return self.book_repository.verif_if_book_exists(book_id)
