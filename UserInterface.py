@@ -15,7 +15,7 @@ class UserInterface:
     def __init__(self) -> None:
         BookArchive()
 
-    def principal_menu() -> int:
+    def principal_menu(self) -> int:
         try:
             print("1 - Cadastrar cliente")
             print("2 - Fazer pedido")

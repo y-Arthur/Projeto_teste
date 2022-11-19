@@ -17,4 +17,4 @@ class BookRepository:
             if (book.id == book_id):
                 return book
 
-        return Book(-1, "Book not found!", "", "", "", 0)
+        return Book(-1, "Livro não encontrado!", "", "", "", 0)
