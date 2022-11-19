@@ -17,6 +17,7 @@ def format_str_price_to_float(price: str) -> float:
     except:
         return 0
 
+
 def verif_if_customer_exists(customer_id: int, customer_repository: CustomerRepository) -> bool:
     for customer in customer_repository.list_customers:
         if (customer.id == customer_id):

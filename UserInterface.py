@@ -6,10 +6,12 @@ from repositories.book_repository import BookRepository
 from entities.order import Order
 from repositories.book_archive import BookArchive
 
+
 class UserInterface:
     customer_repository = CustomerRepository()
     order_repository = OrderRepository()
     book_repository = BookRepository()
+
     def __init__(self) -> None:
         BookArchive()
 
@@ -25,7 +27,7 @@ class UserInterface:
         except:
             print("A opção informada é inválida, o programa vai ser encerrado...")
             return 0
-    
+
     while True:
         menu_option = principal_menu()
         if (menu_option == 0):
@@ -79,9 +81,9 @@ class UserInterface:
             formatText = "{0:<10} {1:<20} {1:<20} {1:<20} {1:<20} {1:<20}\n"
             menu = ("\n***** Relatório de livros cadastrados *****\n")
             menu += formatText.format("Id", "Ttítulo", "ISBN",
-                                    "Autor", "Assunto", "Valor", "Estoque")
+                                      "Autor", "Assunto", "Valor", "Estoque")
 
             for book in book_repository.list_books:
                 menu += formatText.format(book.id, book.name, book.isbn,
-                                        book.author, book.category, book.price, book.stock)
+                                          book.author, book.category, book.price, book.stock)
             print(menu)

@@ -1,6 +1,7 @@
 from entities.book import Book
 from repositories.book_repository import BookRepository
 
+
 class BookArchive:
     file_book = list(open("books.csv", "r", encoding="utf-8"))
     book_repository = BookRepository()
@@ -10,7 +11,7 @@ class BookArchive:
             return float(price.replace("R$ ", "").replace(",", "."))
         except:
             return 0
-            
+
     for book in file_book[1:]:
         list_book = book.split(";")
         book = Book(int(list_book[0]), list_book[1], list_book[2], list_book[3],
