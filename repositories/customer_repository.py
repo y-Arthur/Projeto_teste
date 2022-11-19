@@ -17,4 +17,4 @@ class CustomerRepository:
             if (customer.id == customer_id):
                 return customer
 
-        return Customer(-1, "Client not found!")
+        return Customer(-1, "Cliente não encontrado!")
