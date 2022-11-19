@@ -73,6 +73,7 @@ for book in file_book[1:]:
 customer_repository = CustomerRepository()
 order_repository = OrderRepository()
 
+# Loop principal do programa
 while True:
     menu_option = principal_menu()
     if (menu_option == 0):
